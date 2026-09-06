@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Angel Danny Web Makers builds secure, modern and professional websites.">
+<title>Angel Danny Web Makers</title>
+<style>
+:root{
+  --accent:#18c7d8;
+  --bg:#07111d;
+  --card:#0d1c2b;
+  --text:#eef7ff;
+  --muted:#a9bac9;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+body.light{--bg:#f4f8fb;--card:#fff;--text:#102030;--muted:#526170}
+header{position:sticky;top:0;z-index:10;background:rgba(7,17,29,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+body.light header{background:rgba(255,255,255,.92)}
+nav{max-width:1150px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-weight:800;color:var(--accent);letter-spacing:.5px}
+nav a{color:var(--text);text-decoration:none;margin-left:16px;font-size:.94rem}
+button{font:inherit}
+.icon-btn{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:8px 11px;cursor:pointer}
+.hero{min-height:620px;display:grid;place-items:center;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,10,18,.93),rgba(3,10,18,.48))}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}
+.hero-content{width:min(900px,90%);padding:90px 0}
+.badge{display:inline-block;padding:7px 12px;border:1px solid var(--accent);border-radius:999px;color:var(--accent)}
+h1{font-size:clamp(2.5rem,7vw,5.2rem);line-height:1.05;margin:20px 0}
+.hero p{max-width:650px;color:#d8e8f4;font-size:1.15rem}
+.cta{display:inline-block;margin-top:15px;padding:13px 22px;background:var(--accent);color:#001116;text-decoration:none;border-radius:9px;font-weight:bold}
+section{max-width:1150px;margin:auto;padding:75px 22px}
+h2{font-size:2rem}.lead{color:var(--muted);max-width:720px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:28px}
+.card{background:var(--card);padding:24px;border:1px solid rgba(120,180,220,.15);border-radius:14px}
+.card h3{margin-top:0;color:var(--accent)}
+.contact{background:var(--card);border-radius:16px;padding:30px}
+footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid rgba(120,180,220,.12)}
+.settings-panel{position:fixed;right:18px;top:75px;width:min(330px,calc(100vw - 36px));background:var(--card);border:1px solid rgba(120,180,220,.25);border-radius:16px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,.35);z-index:20;display:none}
+.settings-panel.open{display:block}
+.settings-panel h3{margin:0 0 15px}
+.setting{padding:13px 0;border-bottom:1px solid rgba(120,180,220,.12);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.setting:last-child{border-bottom:0}
+select,input[type="checkbox"]{accent-color:var(--accent)}
+input[type="range"]{width:140px}
+@media(max-width:700px){nav a{display:none}.hero{min-height:560px}}
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <div class="logo">ANGEL DANNY WEB MAKERS</div>
+    <div>
+      <a href="#services">Services</a>
+      <a href="#security">Security</a>
+      <a href="#contact">Contact</a>
+      <button class="icon-btn" id="settingsBtn" aria-label="Open settings">⚙ Settings</button>
+    </div>
+  </nav>
+</header>
+
+<aside class="settings-panel" id="settingsPanel" aria-label="Website settings">
+  <h3>⚙ Website Settings</h3>
+  <div class="setting"><span>Dark mode</span><input id="themeToggle" type="checkbox" checked></div>
+  <div class="setting"><span>Font size</span><input id="fontSize" type="range" min="14" max="22" value="16"></div>
+  <div class="setting"><span>Language</span>
+    <select id="language"><option>English</option><option>Bemba</option><option>Nyanja</option></select>
+  </div>
+  <div class="setting"><span>Notifications</span><input id="notifyToggle" type="checkbox"></div>
+  <div class="setting"><span>Cookie preferences</span><button class="icon-btn" id="cookieBtn">Manage</button></div>
+  <p id="cookieMessage" style="color:var(--muted);font-size:.9rem;margin-bottom:0"></p>
+</aside>
+
+<main>
+  <section class="hero">
+    <img src="web-development-hero.jpg" alt="Professional website development workspace">
+    <div class="hero-content">
+      <span class="badge">SECURE • MODERN • PROFESSIONAL</span>
+      <h1>We Build Powerful Websites.</h1>
+      <p>Angel Danny Web Makers creates responsive websites for businesses, services and personal brands, with security and performance built into the foundation.</p>
+      <a class="cta" href="#contact">Start Your Website</a>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <p class="lead">Modern web solutions designed to help your business look professional online.</p>
+    <div class="grid">
+      <article class="card"><h3>Website Design</h3><p>Clean, attractive and mobile-friendly website designs.</p></article>
+      <article class="card"><h3>Web Development</h3><p>Fast, responsive pages built with reliable technologies.</p></article>
+      <article class="card"><h3>Website Security</h3><p>HTTPS guidance, secure forms, updates and security best practices.</p></article>
+      <article class="card"><h3>Maintenance</h3><p>Ongoing updates and improvements to keep your site working well.</p></article>
+    </div>
+  </section>
+
+  <section id="security">
+    <h2>Security First</h2>
+    <div class="grid">
+      <article class="card"><h3>🔒 HTTPS Ready</h3><p>Use encrypted connections and trusted hosting.</p></article>
+      <article class="card"><h3>🛡️ Secure Practices</h3><p>Input validation, dependency updates and least-privilege access.</p></article>
+      <article class="card"><h3>💾 Backups</h3><p>Maintain backups and a recovery plan for important website data.</p></article>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <h2>Let's Build Your Website</h2>
+      <p>📞 0977388313</p>
+      <p>📧 drlldanny@gmail.com</p>
+      <a class="cta" href="mailto:drlldanny@gmail.com">Contact Us</a>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Angel Danny Web Makers. All rights reserved.</footer>
+
+<script>
+const panel=document.getElementById('settingsPanel');
+document.getElementById('settingsBtn').onclick=()=>panel.classList.toggle('open');
+const theme=document.getElementById('themeToggle');
+theme.onchange=()=>document.body.classList.toggle('light',!theme.checked);
+document.getElementById('fontSize').oninput=e=>document.documentElement.style.fontSize=e.target.value+'px';
+document.getElementById('notifyToggle').onchange=e=>{
+  if(e.target.checked && 'Notification' in window && Notification.permission==='default') Notification.requestPermission();
+};
+document.getElementById('cookieBtn').onclick=()=>{
+  localStorage.setItem('cookiePreferences','managed');
+  document.getElementById('cookieMessage').textContent='Cookie preferences saved on this device.';
+};
+</script>
+</body>
+</html>
